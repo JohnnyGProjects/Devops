@@ -1,0 +1,43 @@
+- name: set hosts
+  hosts: localhost
+  become: yes
+  become_method: sudo
+  connection: local
+  tasks:
+    - name: Install git
+      apt:
+        name: git
+        state: present
+        update_cache: yes
+
+    - name: git checkout
+      ansible.builtin.git:
+        repo: https://github.com/gourteacher/Assignment4CodeBase.git
+        dest: /home/yoseph/Assignment4CodeBase
+        clone: yes
+        update: yes
+
+    - name: install python3
+      command: sudo apt-get update
+      command: sudo apt-get install python3
+
+    - name: install python3-pip
+      command: sudo apt-get install python3-pip
+
+    - name: install flask
+      command: pip install flask
+
+    - name: Run application
+      shell: |
+              cd /home/yoseph/Assignment4CodeBase/
+              python3 app.py
+      async: 10
+      poll: 0
+
+    - name: Check that a page returns a status 200 or failed
+      uri:
+        url: http://192.168.209.130:5000/interfaces
+        return_content: yes
+      register: routes
+    - debug:
+        var: routes.json
