@@ -47,72 +47,71 @@ Parses network interface data and returns detected interfaces with their IPv4 ad
 
 🧠 Application Logic
 
-    Extracts interface names and IPv4 addresses from raw interface output
+Extracts interface names and IPv4 addresses from raw interface output
 
-    Filters valid interface and address pairs
+Filters valid interface and address pairs
 
-    Returns data as structured JSON using Flask response objects
+Returns data as structured JSON using Flask response objects
 
-    Includes basic error handling to prevent application crashes
+Includes basic error handling to prevent application crashes
 
 🧪 Testing
 
 Automated tests are written using pytest to verify:
 
-    Application startup
+Application startup
 
-    Root endpoint availability
+Root endpoint availability
 
-    Correct HTTP status responses
+Correct HTTP status responses
 
 Tests use Flask’s built-in test client.
+
 🤖 Automation with Ansible
 
 An Ansible playbook is included to automate setup and execution tasks, including:
 
-    Installing required system packages
+Installing required system packages
 
-    Cloning the application repository
+Cloning the application repository
 
-    Installing Python dependencies
+Installing Python dependencies
 
-    Running the Flask application
+Running the Flask application
 
-    Verifying endpoint availability using HTTP requests
+Verifying endpoint availability using HTTP requests
 
 This demonstrates basic configuration management and service validation.
+
 🛠️ Technologies Used
 
-    Python
+Python
 
-    Flask
+Flask
 
-    Pytest
+Pytest
 
-    Ansible
+Ansible
 
-    Linux
+Linux
 
-    Git
+Git
 
 🎯 Purpose
 
 This project was built to demonstrate:
 
-    Backend API development with Flask
+Backend API development with Flask
 
-    Parsing and exposing system/network data
+Parsing and exposing system/network data
 
-    Writing automated backend tests
+Writing automated backend tests
 
-    Automating application deployment and verification
+Automating application deployment and verification
 
-    Understanding how backend services are deployed and validated
+Understanding how backend services are deployed and validated
 
 👤 Author
 
 Johnny (Yoseph Gebre)
 IT Graduate | Software Development
-📄 License
-
-This project is for educational and portfolio purposes.
